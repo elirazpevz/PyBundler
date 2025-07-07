@@ -1,6 +1,6 @@
-from inputs import get_single_option
-from package import download_package
-from settings import Settings
+from src.inputs import get_single_option
+from src.package import download_package
+from src.settings import Settings
 
 
 def main():

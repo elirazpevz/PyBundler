@@ -1,4 +1,4 @@
-from inputs import get_option
+from src.inputs import get_option
 
 
 class Settings:

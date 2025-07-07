@@ -2,10 +2,10 @@ import subprocess
 
 import requests
 from packaging.version import parse
-from inputs import get_option
+from src.inputs import get_option
 from settings import Settings
 
-DOWNLOAD_DIR = './wheels'
+DOWNLOAD_DIR = '../wheels'
 
 
 def get_all_versions(package_name: str, pyvers: list[str], platforms: list[str]):
