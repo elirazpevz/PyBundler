@@ -1,7 +1,11 @@
+def format_options(options: list) -> str:
+    return '\n\t'.join(f"{i + 1}) {item}" for i, item in enumerate(options))
+
+
 def get_option(options: list) -> list[str]:
-    formatted_ops = '\n\t'.join(f"{i + 1}) {item}" for i, item in enumerate(options))
-    selected = input(f"""Please provide the indexes as a list of numbers or ranges (-) seperated by ',': \nOptions:
-    {formatted_ops}\n""")
+    formatted_ops = format_options(options)
+    selected = input(
+        f"""Please provide the indexes as a list of numbers or ranges (-) seperated by ',': \nOptions: \n\t{formatted_ops}\n""")
 
     indexes = []
     for i in selected.split(','):
@@ -13,3 +17,11 @@ def get_option(options: list) -> list[str]:
                 indexes.append(j)
 
     return [options[i] for i in indexes]
+
+
+def get_single_option(options: list):
+    formatted_ops = format_options(options)
+    selected = input(
+        f"""Please provide the index of your choice: \nOptions: \n\t{formatted_ops}\n""")
+
+    return options[int(selected) - 1]
